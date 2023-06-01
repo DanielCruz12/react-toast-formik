@@ -11,7 +11,7 @@ const Users = ({ word }) => {
         <ErrorLoading />
       ) : (
         <>
-          <div className=" grid grid-cols-3 gap-3 mb-8 rounded-xl md:mb-12 md:grid-cols-2">
+          <div className=" grid grid-cols-1 gap-3 mb-8 rounded-xl md:mb-12 md:grid-cols-2">
             {data.map((elm) => {
               return (
                 <figure
