@@ -16,7 +16,7 @@ export const useFetch = (url) => {
             setLoading(false)
             setToastNotification(true)
           });
-        }, 500);
+        }, 300);
       } catch (error) {
         console.log(error);
       }

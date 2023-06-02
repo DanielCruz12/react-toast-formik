@@ -1,17 +1,17 @@
-import React, { useState } from "react";
+import React, { useState, Suspense } from "react";
 import toast, { Toaster } from "react-hot-toast";
 import { Formik, Field, ErrorMessage, Form } from "formik";
 import { AiOutlineSearch } from "react-icons/ai";
 import AuthSchema from "../schemas/searchSchema";
-
-import Users from "./Users";
 import Button from "./Button";
 import Title from "./Title";
+const Users = React.lazy(() => import('./Users'));
+
 const Search = () => {
   const [word, setWord] = useState(1);
   const handleSubmit = (values) => {
     setWord(values.word);
-    toast.success("Successfully toasted!");
+    toast.success("Usuarios encontrados! 😎👫👀🎯");
   };
 
   return (
@@ -35,14 +35,17 @@ const Search = () => {
               className="form-text text-red-400 w-100"
               component="div"
             />
-
             <Button name="Buscar usuario" icon={AiOutlineSearch} />
           </div>
         </Form>
       </Formik>
+
       <Toaster />
 
-      <Users word={word} />
+      <Suspense >
+        <Users word={word} />
+      </Suspense>
+
     </>
   );
 };
