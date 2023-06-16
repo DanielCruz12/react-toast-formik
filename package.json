@@ -10,6 +10,8 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@mantine/hooks": "^6.0.13",
+    "@tanstack/react-query": "^4.29.13",
     "axios": "^1.4.0",
     "formik": "^2.4.0",
     "prop-types": "^15.8.1",

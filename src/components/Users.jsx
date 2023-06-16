@@ -2,10 +2,7 @@ import { useState } from "react";
 import { useFetch } from "../hooks/useFetch";
 import ErrorLoading from "./Error";
 import PropTypes from "prop-types";
-
-/* import { AiOutlineSearch } from "react-icons/ai";
-import Button from "./Button";
- */
+import Page from "./Page";
 
 const Users = ({ word }) => {
   const { data, loading } = useFetch(`&results=${word}`);
@@ -16,6 +13,7 @@ const Users = ({ word }) => {
   }
   return (
     <div className="w-full">
+      <Page />
       {loading ? (
         <ErrorLoading />
       ) : (
